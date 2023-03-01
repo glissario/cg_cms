@@ -15,12 +15,7 @@ const config = {
 	kit: {
 		adapter: adapter({
 			split: false
-		}),
-		vite: {
-			ssr: {
-				noExternal: Object.keys(pkg.dependencies || {})
-			}
-		}
+		})
 	}
 };
 
