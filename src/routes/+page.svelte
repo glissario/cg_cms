@@ -1,6 +1,6 @@
 <script context="module">
 	import contentfulFetch from '../lib/contentfulClient';
-	import { introQuery } from '../querys/introduction';
+
 	export async function load() {
 		let posts;
 		const response = await contentfulFetch(introQuery);
@@ -13,6 +13,7 @@
 	import '../styles/styles.scss';
 	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 	import { onMount } from 'svelte';
+	import { introQuery } from '../querys/introduction.query';
 	let viewModel: { headline: String; textContent: string } = { headline: '', textContent: '' };
 	onMount(async () => {
 		const introduction = await load();

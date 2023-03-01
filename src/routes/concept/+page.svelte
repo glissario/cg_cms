@@ -1,6 +1,6 @@
 <script context="module">
 	import contentfulFetch from '../../lib/contentfulClient';
-	import { chapterModelQuery } from '../../querys/table-of-content';
+
 	export async function load() {
 		let posts;
 		const response = await contentfulFetch(chapterModelQuery);
@@ -15,6 +15,7 @@
 	import Chapter from '../../components/chapter.svelte';
 	import type { ChapterItemApiModel, ChapterModel } from '../../types/tableOfContent.types';
 	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+	import { chapterModelQuery } from '../../querys/table-of-content.query';
 	let chapters: ChapterModel[] | [] = [];
 	onMount(async () => {
 		const mainChapters = await load();

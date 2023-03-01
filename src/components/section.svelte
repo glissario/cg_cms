@@ -2,7 +2,7 @@
 	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 	import { onMount } from 'svelte';
 	import contentfulFetch from '../lib/contentfulClient';
-	import { articleQuery } from '../querys/article-query';
+	import { articleQuery } from '../querys/article.query';
 
 	export async function load(chapter = '', section = '') {
 		const response = await contentfulFetch(articleQuery(chapter, section));

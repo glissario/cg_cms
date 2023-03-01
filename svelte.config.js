@@ -1,5 +1,10 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-netlify';
+import { join } from 'path';
+import { readFileSync } from 'fs';
+import { cwd } from 'process';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+
+const pkg = JSON.parse(readFileSync(join(cwd(), 'package.json')));
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,7 +13,14 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			split: false
+		}),
+		vite: {
+			ssr: {
+				noExternal: Object.keys(pkg.dependencies || {})
+			}
+		}
 	}
 };
 

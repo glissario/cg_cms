@@ -1,6 +1,5 @@
 <script context="module">
 	import contentfulFetch from '../lib/contentfulClient';
-	import { sectionQuery } from '../querys/section-query';
 	export async function load(section = '') {
 		const response = await contentfulFetch(sectionQuery(section));
 		const data = await response.json();
@@ -20,6 +19,7 @@
 	import type { SectionItemApiModel, SectionModel } from '../types/section.types';
 	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 	import Section from './section.svelte';
+	import { sectionQuery } from '../querys/section.query';
 
 	onMount(async () => {
 		const sectionsDocument = await load(chapterIndex);

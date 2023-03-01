@@ -1,13 +1,13 @@
-import { createClient } from 'contentful';
+import * as contentful from 'contentful';
 
-const client = createClient({
+const client = contentful.createClient({
 	space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
 	accessToken: import.meta.env.VITE_CONTENTFUL_DELIVERY_API_TOKEN
 });
 
 export { client };
 
-const contentfulFetch = async (query: string) => {
+const contentfulFetch = async (query = '') => {
 	const url =
 		'https://graphql.contentful.com/content/v1/spaces/' + import.meta.env.VITE_CONTENTFUL_SPACE_ID;
 
