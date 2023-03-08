@@ -15,6 +15,7 @@ const config = {
 	kit: {
 		adapter: adapter({
 			target: '#svelte',
+			edge: true,
 			split: false
 		})
 	}
