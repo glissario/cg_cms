@@ -1,3 +1,4 @@
+import adapter from '@sveltejs/adapter-netlify';
 import { join } from 'path';
 import { readFileSync } from 'fs';
 import { cwd } from 'process';
@@ -9,7 +10,14 @@ const pkg = JSON.parse(readFileSync(join(cwd(), 'package.json')));
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
-	preprocess: vitePreprocess()
+	preprocess: vitePreprocess(),
+
+	kit: {
+		adapter: adapter({
+			target: '#svelte',
+			split: false
+		})
+	}
 };
 
 export default config;
