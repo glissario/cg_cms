@@ -11,6 +11,8 @@
 
 <script lang="ts">
 	import '../styles/styles.css';
+	import '../styles/smui.css';
+
 	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 	import { onMount } from 'svelte';
 	import { introQuery } from '../querys/introduction.query';
