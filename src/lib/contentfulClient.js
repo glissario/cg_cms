@@ -1,9 +1,14 @@
 import * as contentful from 'contentful';
 
-const client = contentful.createClient({
-	space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
-	accessToken: import.meta.env.VITE_CONTENTFUL_DELIVERY_API_TOKEN
-});
+const client = contentful.createClient
+	? contentful.createClient({
+			space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
+			accessToken: import.meta.env.VITE_CONTENTFUL_DELIVERY_API_TOKEN
+	  })
+	: contentful.default.createClient({
+			space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
+			accessToken: import.meta.env.VITE_CONTENTFUL_DELIVERY_API_TOKEN
+	  });
 
 export { client };
 

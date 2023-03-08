@@ -1,5 +1,5 @@
 <script context="module">
-	import contentfulFetch from '../lib/contentfulClient';
+	import contentfulFetch from '../lib/contentfulClient.js';
 
 	export async function load() {
 		let posts;
@@ -10,7 +10,7 @@
 </script>
 
 <script lang="ts">
-	import '../styles/styles.scss';
+	import '../styles/styles.css';
 	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 	import { onMount } from 'svelte';
 	import { introQuery } from '../querys/introduction.query';

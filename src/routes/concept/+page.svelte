@@ -1,5 +1,5 @@
 <script context="module">
-	import contentfulFetch from '../../lib/contentfulClient';
+	import contentfulFetch from '../../lib/contentfulClient.js';
 
 	export async function load() {
 		let posts;
@@ -10,7 +10,7 @@
 </script>
 
 <script lang="ts">
-	import '../../styles/styles.scss';
+	import '../../styles/styles.css';
 	import { onMount } from 'svelte';
 	import Chapter from '../../components/chapter.svelte';
 	import type { ChapterItemApiModel, ChapterModel } from '../../types/tableOfContent.types';

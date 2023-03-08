@@ -1,4 +1,4 @@
-import { client } from '$lib/contentfulClient';
+import { client } from '$lib/contentfulClient.js';
 
 export async function get() {
 	const blogs = await client.getEntries({
