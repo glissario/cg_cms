@@ -523,6 +523,7 @@ const Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$unsubscribe_page();
   return $$rendered;
 });
+const smui = "";
 const _layout_svelte_svelte_type_style_lang = "";
 const css = {
   code: ".app.svelte-1cwabsx{display:flex;flex-direction:column;min-height:100vh}main.svelte-1cwabsx{flex:1;display:flex;flex-direction:column;width:98%;margin:0 auto;box-sizing:border-box}@media(min-width: 1024px){main.svelte-1cwabsx{max-width:64rem}}@media(min-width: 800px){main.svelte-1cwabsx{width:100%;max-width:48rem}}",
