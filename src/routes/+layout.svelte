@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Header from '../components/Header.svelte';
+	import '../styles/smui.css';
 </script>
 
 <div class="app">
